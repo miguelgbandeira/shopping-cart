@@ -4,6 +4,7 @@ const routes = [
     path: "/",
     element: <App />,
   },
+  /*
   {
     path: "products",
     element: <ProductsPage />,
@@ -14,6 +15,7 @@ const routes = [
     element: <CheckoutPage />,
     errorElement: <ErrorPage />,
   },
+  */
 ];
 
 export default routes;
