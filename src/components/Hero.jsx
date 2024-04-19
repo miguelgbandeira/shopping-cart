@@ -10,6 +10,8 @@ function Hero() {
 
 const hero = css`
   text-align: center;
+  flex: auto;
+  overflow: auto;
 `;
 
 const heroTitle = css`
