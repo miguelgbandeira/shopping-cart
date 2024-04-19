@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-function Hero() {
+function HeroPage() {
   return (
     <div className={hero}>
       <h1 className={heroTitle}>$1 Deals</h1>
@@ -25,4 +25,4 @@ const subtitle = css`
   margin-top: 0.5em;
 `;
 
-export default Hero;
+export default HeroPage;
