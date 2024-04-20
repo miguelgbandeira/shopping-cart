@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ cartCount }) {
   return (
     <div className={header}>
       <h1>Dollar $tore</h1>
@@ -13,7 +13,7 @@ function Header() {
           products
         </Link>
         <Link className={linkStyle} to="checkout">
-          cart
+          cart {cartCount > 0 ? "(" + cartCount + ")" : ""}
         </Link>
       </div>
     </div>

@@ -1,8 +1,7 @@
 import { css } from "@emotion/css";
 import PropTypes from "prop-types";
 
-function ProductCard({ product }) {
-  console.log(product);
+function ProductCard({ product, handleAddToCart }) {
   return (
     <div className={card}>
       <div className={imageContainer}>
@@ -18,7 +17,7 @@ function ProductCard({ product }) {
       </p>
       <p className={price}>${product.price}</p>
       <div className={buttonContainer}>
-        <button>Add to cart</button>
+        <button onClick={handleAddToCart}>Add to cart</button>
       </div>
     </div>
   );

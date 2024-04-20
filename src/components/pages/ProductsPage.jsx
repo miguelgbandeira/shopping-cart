@@ -2,13 +2,17 @@ import { css } from "@emotion/css";
 import { useEffect } from "react";
 import { useState } from "react";
 import ProductCard from "../ProductCard";
+import { useOutletContext } from "react-router-dom";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const handleAddToCart = useOutletContext();
+
   useEffect(() => {
+    console.log("called again lol");
     fetch("https://fakestoreapi.com/products", {
       mode: "cors",
     })
@@ -31,7 +35,13 @@ function ProductsPage() {
       <div>Products</div>
       <div className={grid}>
         {products.map((product) => {
-          return <ProductCard key={product.id} product={product} />;
+          return (
+            <ProductCard
+              key={product.id}
+              product={product}
+              handleAddToCart={handleAddToCart}
+            />
+          );
         })}
       </div>
     </>
