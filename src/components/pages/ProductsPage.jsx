@@ -1,6 +1,7 @@
 import { css } from "@emotion/css";
 import { useEffect } from "react";
 import { useState } from "react";
+import ProductCard from "../ProductCard";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -25,9 +26,14 @@ function ProductsPage() {
   if (error) return <p>A network error was encountered</p>;
   if (loading) return <p>Loading...</p>;
 
-  console.log(products);
-
-  return <div>Products</div>;
+  return (
+    <>
+      <div>Products</div>
+      {products.map((product) => {
+        return <ProductCard key={product.id} product={product} />;
+      })}
+    </>
+  );
 }
 
 export default ProductsPage;
