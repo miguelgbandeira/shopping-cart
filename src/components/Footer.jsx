@@ -8,6 +8,7 @@ const footer = css`
   background-color: #aaa;
   text-align: center;
   padding: 1em;
+  margin-top: 2em;
 `;
 
 export default Footer;
