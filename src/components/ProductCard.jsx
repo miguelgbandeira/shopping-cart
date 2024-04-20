@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import PropTypes from "prop-types";
 
 function ProductCard({ product }) {
   console.log(product);
@@ -10,8 +11,13 @@ function ProductCard({ product }) {
         {product.rating.rate}({product.rating.count})
       </p>
       <p>${product.price}</p>
+      <button>Add to cart</button>
     </>
   );
 }
+
+ProductCard.propTypes = {
+  product: PropTypes.object,
+};
 
 export default ProductCard;
