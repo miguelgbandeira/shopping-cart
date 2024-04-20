@@ -5,16 +5,15 @@ import Header from "./components/Header";
 import { css } from "@emotion/css";
 
 function App() {
-  const [cartCount, setCountCart] = useState(0);
+  const [cartList, setCartList] = useState([]);
 
-  function handleAddToCart() {
-    console.log("hey");
-    setCountCart(() => cartCount + 1);
+  function handleAddToCart(item) {
+    setCartList((prevCartList) => [...prevCartList, item]);
   }
 
   return (
     <div className={flex}>
-      <Header cartCount={cartCount} />
+      <Header cartCount={cartList.length} />
       <Outlet context={handleAddToCart} />
       <Footer />
     </div>

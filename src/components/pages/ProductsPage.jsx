@@ -12,7 +12,6 @@ function ProductsPage() {
   const handleAddToCart = useOutletContext();
 
   useEffect(() => {
-    console.log("called again lol");
     fetch("https://fakestoreapi.com/products", {
       mode: "cors",
     })
