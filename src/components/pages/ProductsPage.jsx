@@ -9,7 +9,7 @@ function ProductsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/electronics", {
+    fetch("https://fakestoreapi.com/products", {
       mode: "cors",
     })
       .then((response) => {
@@ -29,11 +29,19 @@ function ProductsPage() {
   return (
     <>
       <div>Products</div>
-      {products.map((product) => {
-        return <ProductCard key={product.id} product={product} />;
-      })}
+      <div className={grid}>
+        {products.map((product) => {
+          return <ProductCard key={product.id} product={product} />;
+        })}
+      </div>
     </>
   );
 }
+
+const grid = css`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+`;
 
 export default ProductsPage;
