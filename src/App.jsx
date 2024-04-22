@@ -8,7 +8,21 @@ function App() {
   const [cartList, setCartList] = useState([]);
 
   function handleAddToCart(item) {
-    setCartList((prevCartList) => [...prevCartList, item]);
+    const existingItem = cartList.find((cartItem) => cartItem.id === item.id);
+
+    if (existingItem) {
+      const updatedCartList = cartList.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem
+      );
+      setCartList(updatedCartList);
+    } else {
+      setCartList((prevCartList) => [
+        ...prevCartList,
+        { ...item, quantity: 1 },
+      ]);
+    }
   }
 
   return (

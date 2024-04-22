@@ -11,6 +11,7 @@ function CheckoutCard({ item }) {
         <div>
           <b>{item.title}</b>
           <div>${item.price}</div>
+          <div>Quantity: {item.quantity}</div>
         </div>
       </div>
     </>
