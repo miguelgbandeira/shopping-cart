@@ -1,5 +1,18 @@
+import { useOutletContext } from "react-router-dom";
+import CheckoutCard from "../CheckoutCard";
+
 function CheckoutPage() {
-  return <div>Checkout</div>;
+  const { cartList } = useOutletContext();
+
+  return (
+    <div>
+      <div>
+        {cartList.map((item) => {
+          return <CheckoutCard item={item} key={item.id} />;
+        })}
+      </div>
+    </div>
+  );
 }
 
 export default CheckoutPage;

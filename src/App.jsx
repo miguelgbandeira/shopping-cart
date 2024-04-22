@@ -14,7 +14,7 @@ function App() {
   return (
     <div className={flex}>
       <Header cartCount={cartList.length} />
-      <Outlet context={handleAddToCart} />
+      <Outlet context={{ handleAddToCart, cartList }} />
       <Footer />
     </div>
   );

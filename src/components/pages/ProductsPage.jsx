@@ -9,7 +9,7 @@ function ProductsPage() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const handleAddToCart = useOutletContext();
+  const { handleAddToCart } = useOutletContext();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products", {
