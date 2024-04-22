@@ -31,7 +31,6 @@ function ProductsPage() {
 
   return (
     <>
-      <div>Products</div>
       <div className={grid}>
         {products.map((product) => {
           return (
