@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ProductCard from "../ProductCard";
 import { useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -34,11 +35,14 @@ function ProductsPage() {
       <div className={grid}>
         {products.map((product) => {
           return (
-            <ProductCard
-              key={product.id}
-              product={product}
-              handleAddToCart={handleAddToCart}
-            />
+            <div key={product.id}>
+              <Link className={linkReset} to={`/products/${product.id}`}>
+                <ProductCard
+                  product={product}
+                  handleAddToCart={handleAddToCart}
+                />
+              </Link>
+            </div>
           );
         })}
       </div>
@@ -50,6 +54,11 @@ const grid = css`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+`;
+
+const linkReset = css`
+  text-decoration: none;
+  color: inherit;
 `;
 
 export default ProductsPage;
