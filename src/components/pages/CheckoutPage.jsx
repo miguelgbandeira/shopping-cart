@@ -6,6 +6,7 @@ function CheckoutPage() {
 
   return (
     <div>
+      <h2>Your items:</h2>
       <div>
         {cartList.map((item) => {
           return <CheckoutCard item={item} key={item.id} />;
