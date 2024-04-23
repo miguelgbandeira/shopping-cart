@@ -7,20 +7,20 @@ import { css } from "@emotion/css";
 function App() {
   const [cartList, setCartList] = useState([]);
 
-  function handleAddToCart(item) {
+  function handleAddToCart(item, quantityToAdd = 1) {
     const existingItem = cartList.find((cartItem) => cartItem.id === item.id);
 
     if (existingItem) {
       const updatedCartList = cartList.map((cartItem) =>
         cartItem.id === item.id
-          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          ? { ...cartItem, quantity: cartItem.quantity + quantityToAdd }
           : cartItem
       );
       setCartList(updatedCartList);
     } else {
       setCartList((prevCartList) => [
         ...prevCartList,
-        { ...item, quantity: 1 },
+        { ...item, quantity: quantityToAdd },
       ]);
     }
   }

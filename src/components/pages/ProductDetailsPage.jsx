@@ -26,12 +26,7 @@ function ProductDetailsPage() {
         onDecrement={handleDecrement}
         onChange={handleChange}
       />
-      <button
-        onClick={() => {
-          data.quantity = quantity;
-          handleAddToCart(data);
-        }}
-      >
+      <button onClick={() => handleAddToCart(data, quantity)}>
         Add to cart
       </button>
     </div>

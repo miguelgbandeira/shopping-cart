@@ -17,7 +17,7 @@ function ProductCard({ product, handleAddToCart }) {
       </p>
       <p className={price}>${product.price}</p>
       <div className={buttonContainer}>
-        <button onClick={() => handleAddToCart(product)}>Add to cart</button>
+        <button onClick={() => handleAddToCart(product, 1)}>Add to cart</button>
       </div>
     </div>
   );
