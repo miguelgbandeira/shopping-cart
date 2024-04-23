@@ -1,7 +1,12 @@
 import { css } from "@emotion/css";
 import PropTypes from "prop-types";
+import useQuantity from "./hooks/useQuantity";
+import QuantityInput from "./QuantityInput";
 
 function ProductCard({ product, handleAddToCart }) {
+  const { quantity, handleIncrement, handleDecrement, handleChange } =
+    useQuantity(1, 1);
+
   return (
     <div className={card}>
       <div className={imageContainer}>
@@ -17,7 +22,15 @@ function ProductCard({ product, handleAddToCart }) {
       </p>
       <p className={price}>${product.price}</p>
       <div className={buttonContainer}>
-        <button onClick={() => handleAddToCart(product, 1)}>Add to cart</button>
+        <QuantityInput
+          quantity={quantity}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onChange={handleChange}
+        />
+        <button onClick={() => handleAddToCart(product, quantity)}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
