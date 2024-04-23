@@ -8,8 +8,13 @@ function ProductDetailsPage() {
   const { id } = useParams();
   const { data, loading, error } = useData(`/products/${id}`);
   const { handleAddToCart } = useOutletContext();
-  const { quantity, handleIncrement, handleDecrement, handleChange } =
-    useQuantity(1, 1);
+  const {
+    quantity,
+    setQuantity,
+    handleIncrement,
+    handleDecrement,
+    handleChange,
+  } = useQuantity(1, 1);
 
   if (error) return <p>A network error was encountered</p>;
   if (loading) return <p>Loading...</p>;
@@ -26,7 +31,12 @@ function ProductDetailsPage() {
         onDecrement={handleDecrement}
         onChange={handleChange}
       />
-      <button onClick={() => handleAddToCart(data, quantity)}>
+      <button
+        onClick={() => {
+          handleAddToCart(data, quantity);
+          setQuantity(1);
+        }}
+      >
         Add to cart
       </button>
     </div>

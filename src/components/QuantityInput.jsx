@@ -8,9 +8,19 @@ function QuantityInput({
   inputStyle = {},
   buttonStyle = {},
 }) {
+  const handleIncrement = (e) => {
+    e.preventDefault();
+    onIncrement();
+  };
+
+  const handleDecrement = (e) => {
+    e.preventDefault();
+    onDecrement();
+  };
+
   return (
     <div>
-      <button onClick={onDecrement} style={buttonStyle}>
+      <button onClick={handleDecrement} style={buttonStyle}>
         -
       </button>
       <input
@@ -18,10 +28,11 @@ function QuantityInput({
         min={min}
         max={max}
         value={quantity}
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.value)}
         style={inputStyle}
+        onClick={(e) => e.preventDefault()}
       />
-      <button onClick={onIncrement} style={buttonStyle}>
+      <button onClick={handleIncrement} style={buttonStyle}>
         +
       </button>
     </div>

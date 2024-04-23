@@ -4,8 +4,13 @@ import useQuantity from "./hooks/useQuantity";
 import QuantityInput from "./QuantityInput";
 
 function ProductCard({ product, handleAddToCart }) {
-  const { quantity, handleIncrement, handleDecrement, handleChange } =
-    useQuantity(1, 1);
+  const {
+    quantity,
+    setQuantity,
+    handleIncrement,
+    handleDecrement,
+    handleChange,
+  } = useQuantity(1, 1);
 
   return (
     <div className={card}>
@@ -28,7 +33,13 @@ function ProductCard({ product, handleAddToCart }) {
           onDecrement={handleDecrement}
           onChange={handleChange}
         />
-        <button onClick={() => handleAddToCart(product, quantity)}>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleAddToCart(product, quantity);
+            setQuantity(1);
+          }}
+        >
           Add to cart
         </button>
       </div>
