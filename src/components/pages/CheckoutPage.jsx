@@ -3,7 +3,14 @@ import { css } from "@emotion/css";
 import CheckoutCard from "../CheckoutCard";
 
 function CheckoutPage() {
-  const { cartList } = useOutletContext();
+  const { cartList, setCartList } = useOutletContext();
+
+  function handleCheckout() {
+    alert(`
+    Thank you for your order!
+    We hope to see you soon!`);
+    setCartList([]);
+  }
 
   let totalValue = 0;
 
@@ -27,7 +34,9 @@ function CheckoutPage() {
           <p>Total:</p>
           <p>${parseFloat(totalValue.toFixed(2))}</p>
         </div>
-        <button disabled>Checkout</button>
+        <button onClick={() => handleCheckout()} disabled={!cartList.length}>
+          Checkout
+        </button>
       </div>
     </div>
   );
