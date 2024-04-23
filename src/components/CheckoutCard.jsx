@@ -1,7 +1,6 @@
 import { css } from "@emotion/css";
 
 function CheckoutCard({ item }) {
-  console.log(item);
   return (
     <>
       <div key={item.id} className={itemCard}>
