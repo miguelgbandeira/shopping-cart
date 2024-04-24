@@ -1,5 +1,6 @@
 import { css } from "@emotion/css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Header({ cartCount }) {
   return (
@@ -37,5 +38,9 @@ const linkStyle = css`
   text-decoration: none;
   color: black;
 `;
+
+Header.propTypes = {
+  cartCount: PropTypes.number,
+};
 
 export default Header;

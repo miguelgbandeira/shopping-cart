@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import PropTypes from "prop-types";
 
 function CheckoutCard({ item }) {
   return (
@@ -42,5 +43,9 @@ const cardInformationHeader = css`
   flex-direction: column;
   gap: 0.7em;
 `;
+
+CheckoutCard.propTypes = {
+  item: PropTypes.object,
+};
 
 export default CheckoutCard;

@@ -78,4 +78,9 @@ ProductCard.propTypes = {
   product: PropTypes.object,
 };
 
+ProductCard.propTypes = {
+  product: PropTypes.object,
+  handleAddToCart: PropTypes.func,
+};
+
 export default ProductCard;
