@@ -5,6 +5,10 @@ import CheckoutCard from "../CheckoutCard";
 function CheckoutPage() {
   const { cartList, setCartList } = useOutletContext();
 
+  function removeItem(item) {
+    setCartList(cartList.filter((cartItem) => cartItem !== item));
+  }
+
   function handleCheckout() {
     alert(`
     Thank you for your order!
@@ -24,7 +28,13 @@ function CheckoutPage() {
 
             totalValue += itemTotal;
 
-            return <CheckoutCard item={item} key={item.id} />;
+            return (
+              <CheckoutCard
+                item={item}
+                key={item.id}
+                handleRemoveItem={removeItem}
+              />
+            );
           })}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import PropTypes from "prop-types";
 
-function CheckoutCard({ item }) {
+function CheckoutCard({ item, handleRemoveItem }) {
   return (
     <>
       <div key={item.id} className={itemCard}>
@@ -13,7 +13,10 @@ function CheckoutCard({ item }) {
             <b>{item.title}</b>
             <div>${item.price}</div>
           </div>
-          <div>Quantity: {item.quantity}</div>
+          <div>
+            <div>Quantity: {item.quantity}</div>
+            <button onClick={() => handleRemoveItem(item)}>Remove</button>
+          </div>
         </div>
       </div>
     </>
@@ -46,6 +49,7 @@ const cardInformationHeader = css`
 
 CheckoutCard.propTypes = {
   item: PropTypes.object,
+  handleRemoveItem: PropTypes.func,
 };
 
 export default CheckoutCard;
