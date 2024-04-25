@@ -1,12 +1,13 @@
 import { css } from "@emotion/css";
 import heroImage from "../../assets/winter-woman-shopping-illustration-by-Vexels.png";
+import Button from "../Button";
 function HeroPage() {
   return (
     <div className={container}>
       <div>
         <h1 className={heroTitle}>FreshFinds</h1>
         <h3 className={subtitle}>Shop Smarter, Not Harder</h3>
-        <button className={button}>Shop now</button>
+        <Button handleClick={() => null} text={"Shop now"} />
       </div>
       <div>
         <img className={image} src={heroImage} />
@@ -32,18 +33,6 @@ const subtitle = css`
   font-size: 2em;
   margin-top: 0.5em;
   color: var(--light-blue);
-`;
-
-const button = css`
-  background: var(--light-purple);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 0.5em 1.5em;
-  font: inherit;
-  font-weight: bolder;
-  cursor: pointer;
-  outline: inherit;
 `;
 
 const image = css`

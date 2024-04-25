@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { css } from "@emotion/css";
 
 function QuantityInput({
   quantity,
@@ -19,9 +20,12 @@ function QuantityInput({
   };
 
   return (
-    <div>
-      <button onClick={handleDecrement}>-</button>
+    <div className={container}>
+      <button className={btn} onClick={handleDecrement}>
+        -
+      </button>
       <input
+        className={input}
         type="number"
         min={min}
         max={max}
@@ -29,10 +33,38 @@ function QuantityInput({
         onChange={(e) => onChange(e.target.value)}
         onClick={(e) => e.preventDefault()}
       />
-      <button onClick={handleIncrement}>+</button>
+      <button className={btn} onClick={handleIncrement}>
+        +
+      </button>
     </div>
   );
 }
+
+const container = css`
+  display: flex;
+  gap: 0.2em;
+`;
+
+const btn = css`
+  background: var(--light-purple);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  width: 1.5em;
+  height: 1.5em;
+  font: inherit;
+  font-weight: bolder;
+  cursor: pointer;
+  outline: inherit;
+  text-align: center;
+`;
+
+const input = css`
+  border: 1px solid var(--cadet-grey);
+  text-align: center;
+  border-radius: 10px;
+  padding: 0.2em;
+`;
 
 QuantityInput.propTypes = {
   quantity: PropTypes.number,

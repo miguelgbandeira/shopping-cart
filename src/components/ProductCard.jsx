@@ -2,6 +2,7 @@ import { css } from "@emotion/css";
 import PropTypes from "prop-types";
 import useQuantity from "./hooks/useQuantity";
 import QuantityInput from "./QuantityInput";
+import Button from "./Button";
 
 function ProductCard({ product, handleAddToCart }) {
   const {
@@ -33,15 +34,14 @@ function ProductCard({ product, handleAddToCart }) {
           onDecrement={handleDecrement}
           onChange={handleChange}
         />
-        <button
-          onClick={(e) => {
+        <Button
+          handleClick={(e) => {
             e.preventDefault();
             handleAddToCart(product, quantity);
             setQuantity(1);
           }}
-        >
-          Add to cart
-        </button>
+          text={"Add to cart"}
+        />
       </div>
     </div>
   );
@@ -50,7 +50,7 @@ function ProductCard({ product, handleAddToCart }) {
 const card = css`
   width: 300px;
   padding: 1em;
-  border: 1px solid black;
+  border: 1px solid var(--cadet-grey);
   border-radius: 10px;
 `;
 
@@ -61,7 +61,9 @@ const imageContainer = css`
 
 const buttonContainer = css`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
 `;
 
 const rating = css`
