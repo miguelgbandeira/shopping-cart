@@ -57,6 +57,18 @@ const btn = css`
   cursor: pointer;
   outline: inherit;
   text-align: center;
+
+  &:active {
+    background: var(--main-purple);
+  }
+
+  &:focus {
+    border: 2px solid var(--main-purple);
+  }
+
+  &:hover {
+    border: 1px solid var(--main-purple);
+  }
 `;
 
 const input = css`
@@ -64,6 +76,10 @@ const input = css`
   text-align: center;
   border-radius: 10px;
   padding: 0.2em;
+
+  &:active {
+    background: var(--main-purple);
+  }
 `;
 
 QuantityInput.propTypes = {
