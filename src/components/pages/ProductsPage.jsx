@@ -32,7 +32,7 @@ function ProductsPage() {
 }
 
 const content = css`
-  margin: 2.5em auto; /* Center the container and give vertical space */
+  margin: 2.5em auto;
   padding: 0;
 `;
 

@@ -69,7 +69,6 @@ const productImage = css`
 
 const title = css`
   font-size: 1em;
-  text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

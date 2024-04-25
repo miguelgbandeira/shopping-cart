@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
-function Button({ text, handleClick }) {
+function Button({ text, handleClick, disabled = false }) {
   return (
-    <button className={button} onClick={handleClick}>
+    <button className={button} onClick={handleClick} disabled={disabled}>
       {text}
     </button>
   );

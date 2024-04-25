@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import { css } from "@emotion/css";
 import CheckoutCard from "../CheckoutCard";
+import Button from "../Button";
 
 function CheckoutPage() {
   const { cartList, setCartList } = useOutletContext();
@@ -38,15 +39,17 @@ function CheckoutPage() {
           })}
         </div>
       </div>
-      <div>
+      <div className={summaryContainer}>
         <h2>Summary</h2>
         <div className={price}>
           <p>Total:</p>
           <p>${parseFloat(totalValue.toFixed(2))}</p>
         </div>
-        <button onClick={() => handleCheckout()} disabled={!cartList.length}>
-          Checkout
-        </button>
+        <Button
+          handleClick={handleCheckout}
+          text={"Checkout"}
+          disabled={!cartList.length}
+        />
       </div>
     </div>
   );
@@ -56,6 +59,12 @@ const style = css`
   display: flex;
   gap: 100px;
   justify-content: space-around;
+`;
+
+const summaryContainer = css`
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 `;
 
 const price = css`
