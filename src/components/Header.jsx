@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function Header({ cartCount }) {
   return (
     <div className={header}>
-      <h1>Dollar $tore</h1>
+      <h1 className={navTitle}>FreshFinds</h1>
       <div className={nav}>
         <Link className={linkStyle} to="/">
           home
@@ -26,6 +26,10 @@ const header = css`
   justify-content: space-between;
   align-items: center;
   margin: 0 2em;
+`;
+
+const navTitle = css`
+  color: var(--main-purple);
 `;
 
 const nav = css`

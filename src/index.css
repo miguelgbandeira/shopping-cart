@@ -1,3 +1,9 @@
+:root {
+  --main-purple: #786dff;
+  --light-blue: #3fcbf3;
+  --light-purple: #b7b5ff;
+}
+
 * {
   font-family: "Poppins";
 }
