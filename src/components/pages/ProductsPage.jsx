@@ -12,7 +12,7 @@ function ProductsPage() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <>
+    <div className={content}>
       <div className={grid}>
         {data.map((product) => {
           return (
@@ -27,14 +27,31 @@ function ProductsPage() {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 
+const content = css`
+  margin: 2.5em auto; /* Center the container and give vertical space */
+  padding: 0;
+`;
+
 const grid = css`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5em;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 460px) {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const linkReset = css`

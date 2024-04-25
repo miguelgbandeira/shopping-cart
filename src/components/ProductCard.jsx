@@ -16,13 +16,9 @@ function ProductCard({ product, handleAddToCart }) {
   return (
     <div className={card}>
       <div className={imageContainer}>
-        <img
-          style={{ width: "100px" }}
-          src={product.image}
-          alt={product.title}
-        />
+        <img className={productImage} src={product.image} alt={product.title} />
       </div>
-      <h3>{product.title}</h3>
+      <h3 className={title}>{product.title}</h3>
       <p className={rating}>
         {product.rating.rate}⭐️ ({product.rating.count})
       </p>
@@ -48,15 +44,35 @@ function ProductCard({ product, handleAddToCart }) {
 }
 
 const card = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 300px;
+  height: 400px;
   padding: 1em;
   border: 1px solid var(--cadet-grey);
   border-radius: 10px;
+  overflow: hidden;
 `;
 
 const imageContainer = css`
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 150px;
+`;
+
+const productImage = css`
+  width: 100px;
+  height: auto;
+`;
+
+const title = css`
+  font-size: 1em;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const buttonContainer = css`
