@@ -59,6 +59,11 @@ const style = css`
   display: flex;
   gap: 100px;
   justify-content: space-around;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const summaryContainer = css`

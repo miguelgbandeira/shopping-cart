@@ -22,6 +22,7 @@ const footer = css`
   text-align: center;
   padding: 1em;
   margin-top: 2em;
+  width: 100%;
 `;
 
 const githubIcon = css`

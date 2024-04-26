@@ -44,6 +44,10 @@ const header = css`
   align-items: center;
   margin: 0 2em;
   padding: 0.5em;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const navTitle = css`

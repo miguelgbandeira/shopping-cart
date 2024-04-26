@@ -76,6 +76,7 @@ const input = css`
   text-align: center;
   border-radius: 10px;
   padding: 0.2em;
+  max-width: 100px;
 
   &:active {
     background: var(--main-purple);

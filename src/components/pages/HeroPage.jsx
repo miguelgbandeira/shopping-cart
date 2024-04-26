@@ -8,7 +8,7 @@ function HeroPage() {
       <div>
         <h1 className={heroTitle}>FreshFinds</h1>
         <h3 className={subtitle}>Shop Smarter, Not Harder</h3>
-        <Link to="/products">
+        <Link to="/products" className={button}>
           <Button handleClick={() => null} text={"Shop now"} />
         </Link>
       </div>
@@ -24,6 +24,12 @@ const container = css`
   justify-content: space-around;
   align-items: center;
   padding: 1em;
+
+  @media (max-width: 900px) {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
 `;
 
 const heroTitle = css`
@@ -42,6 +48,17 @@ const subtitle = css`
 
 const image = css`
   max-width: 500px;
+  @media (max-width: 900px) {
+    max-width: 250px;
+  }
+`;
+
+const button = css`
+  @media (max-width: 900px) {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
 `;
 
 export default HeroPage;
