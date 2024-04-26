@@ -14,6 +14,12 @@ importers:
       '@emotion/react':
         specifier: ^11.11.4
         version: 11.11.4(@types/react@18.2.79)(react@18.2.0)
+      '@ionic/react':
+        specifier: ^8.0.1
+        version: 8.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      ionicons:
+        specifier: ^7.3.1
+        version: 7.3.1
       prop-types:
         specifier: ^15.8.1
         version: 15.8.1
@@ -386,6 +392,15 @@ packages:
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
 
+  '@ionic/core@8.0.1':
+    resolution: {integrity: sha512-6FEa0kSXSs82aCYcB7JcLGt5Z0XBU8mRFQGVrJtdh3ybQQntIAWKHc9H2OFaiT3SSAK+XQqlU6kq0jM9nWKveQ==}
+
+  '@ionic/react@8.0.1':
+    resolution: {integrity: sha512-5AtrqzEk5lnr4ztm4PDnjXs8OhknGVSclCxef1InmhE2EMSFrIV8SZOdV+fCMinKSUcAatxss4uGGGChcXFcSQ==}
+    peerDependencies:
+      react: '>=16.8.6'
+      react-dom: '>=16.8.6'
+
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
@@ -499,6 +514,11 @@ packages:
     resolution: {integrity: sha512-/BypzV0H1y1HzgYpxqRaXGBRqfodgoBBCcsrujT6QRcakDQdfU+Lq9PENPh5jB4I44YWq+0C2eHsHya+nZY1sA==}
     cpu: [x64]
     os: [win32]
+
+  '@stencil/core@4.17.1':
+    resolution: {integrity: sha512-nlARe1QtK5abnCG8kPQKJMWiELg39vKabvf3ebm6YEhQA35CgrxC1pVYTsYq3yktJKoY+k+VzGRnATLKyaLbvA==}
+    engines: {node: '>=16.0.0', npm: '>=7.10.0'}
+    hasBin: true
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -958,6 +978,9 @@ packages:
     resolution: {integrity: sha512-NGnrKwXzSms2qUUih/ILZ5JBqNTSa1+ZmP6flaIp6KmSElgE9qdndzS3cqjrDovwFdmwsGsLdeFgB6suw+1e9g==}
     engines: {node: '>= 0.4'}
 
+  ionicons@7.3.1:
+    resolution: {integrity: sha512-1boG4EQTBBpQ4/0PU60Yi78Iw/k8iNtKu9c0NmsbzHGnWAcwpiovG9Wi/rk5UlF+DC+CR4XDCxKo91YqvAxkww==}
+
   is-array-buffer@3.0.4:
     resolution: {integrity: sha512-wcjaerHw0ydZwfhiKbXJWLDY8A7yV7KhjQOpb83hGgGfId/aQa4TOvwyzn2PuswW2gPCYEL/nEAiSVpdOj1lXw==}
     engines: {node: '>= 0.4'}
@@ -1399,6 +1422,9 @@ packages:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
 
+  tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -1820,6 +1846,20 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
+  '@ionic/core@8.0.1':
+    dependencies:
+      '@stencil/core': 4.17.1
+      ionicons: 7.3.1
+      tslib: 2.6.2
+
+  '@ionic/react@8.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@ionic/core': 8.0.1
+      ionicons: 7.3.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tslib: 2.6.2
+
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
       '@jridgewell/set-array': 1.2.1
@@ -1898,6 +1938,8 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.14.3':
     optional: true
+
+  '@stencil/core@4.17.1': {}
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -2535,6 +2577,10 @@ snapshots:
       hasown: 2.0.2
       side-channel: 1.0.6
 
+  ionicons@7.3.1:
+    dependencies:
+      '@stencil/core': 4.17.1
+
   is-array-buffer@3.0.4:
     dependencies:
       call-bind: 1.0.7
@@ -3003,6 +3049,8 @@ snapshots:
   text-table@0.2.0: {}
 
   to-fast-properties@2.0.0: {}
+
+  tslib@2.6.2: {}
 
   type-check@0.4.0:
     dependencies:
