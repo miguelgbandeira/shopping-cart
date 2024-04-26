@@ -34,6 +34,7 @@ const subtitle = css`
   font-size: 2em;
   margin-top: 0.5em;
   color: var(--light-blue);
+  margin-bottom: 0.5em;
 `;
 
 const image = css`
