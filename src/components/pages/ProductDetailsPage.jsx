@@ -28,7 +28,7 @@ function ProductDetailsPage() {
       </div>
       <div className={infoContainer}>
         <h1>{data.title}</h1>
-        <h2>${data.price}</h2>
+        <h2>${parseFloat(data.price).toFixed(2)}</h2>
         <h4>{data.description}</h4>
         <div className={buttonsContainer}>
           <QuantityInput

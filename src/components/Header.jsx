@@ -5,7 +5,9 @@ import PropTypes from "prop-types";
 function Header({ cartCount }) {
   return (
     <div className={header}>
-      <h1 className={navTitle}>FreshFinds</h1>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <h1 className={navTitle}>FreshFinds</h1>
+      </Link>
       <div className={nav}>
         <Link className={linkStyle} to="/">
           home

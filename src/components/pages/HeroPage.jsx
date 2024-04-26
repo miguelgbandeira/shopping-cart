@@ -1,13 +1,16 @@
 import { css } from "@emotion/css";
 import heroImage from "../../assets/winter-woman-shopping-illustration-by-Vexels.png";
 import Button from "../Button";
+import { Link } from "react-router-dom";
 function HeroPage() {
   return (
     <div className={container}>
       <div>
         <h1 className={heroTitle}>FreshFinds</h1>
         <h3 className={subtitle}>Shop Smarter, Not Harder</h3>
-        <Button handleClick={() => null} text={"Shop now"} />
+        <Link to="/products">
+          <Button handleClick={() => null} text={"Shop now"} />
+        </Link>
       </div>
       <div>
         <img className={image} src={heroImage} />

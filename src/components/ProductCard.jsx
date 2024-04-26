@@ -22,7 +22,7 @@ function ProductCard({ product, handleAddToCart }) {
       <p className={rating}>
         {product.rating.rate}⭐️ ({product.rating.count})
       </p>
-      <p className={price}>${product.price}</p>
+      <p className={price}>${parseFloat(product.price).toFixed(2)}</p>
       <div className={buttonContainer}>
         <QuantityInput
           quantity={quantity}
