@@ -20,6 +20,7 @@ const container = css`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 1em;
 `;
 
 const heroTitle = css`
@@ -36,7 +37,7 @@ const subtitle = css`
 `;
 
 const image = css`
-  width: 500px;
+  max-width: 500px;
 `;
 
 export default HeroPage;

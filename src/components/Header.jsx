@@ -26,6 +26,7 @@ const header = css`
   justify-content: space-between;
   align-items: center;
   margin: 0 2em;
+  padding: 0.5em;
 `;
 
 const navTitle = css`
