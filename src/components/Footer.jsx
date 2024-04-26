@@ -7,7 +7,7 @@ function Footer() {
     <div className={footer}>
       Copyright © 2024 miguelgbandeira
       <a
-        href="https://github.com/miguelgbandeira/cv-builder-react"
+        href="https://github.com/miguelgbandeira/shopping-cart"
         target="_blank"
       >
         <IonIcon className={githubIcon} icon={logoGithub} id="github-icon" />
